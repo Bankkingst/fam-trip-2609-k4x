@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Macau + Chimelong trip — 9 to 13 Sep 2026</title>
+<style>
+  :root {
+    --ink: #14202b;
+    --muted: #5b6b7a;
+    --line: #e6ebf1;
+    --teal: #0e9aa7;
+    --deep: #123a63;
+    --coral: #ff7a5c;
+    --paper: #ffffff;
+    --bg: #eef2f6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+    margin: 0;
+    padding: 14px 14px 28px;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    border-radius: 20px;
+    padding: 26px 22px 24px;
+    color: #fff;
+    background: linear-gradient(135deg, #0b2b4a 0%, #124f70 45%, #0e9aa7 100%);
+    box-shadow: 0 10px 24px rgba(14, 40, 66, .22);
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -60px; top: -70px;
+    width: 210px; height: 210px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, rgba(255,122,92,.55), rgba(255,122,92,0) 70%);
+  }
+  .hero .eyebrow {
+    position: relative; z-index: 1;
+    font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+    color: #ffd8cd; margin: 0 0 8px; font-weight: 700;
+  }
+  .hero h1 {
+    position: relative; z-index: 1;
+    font-size: 30px; line-height: 1.15; margin: 0 0 10px; font-weight: 800; letter-spacing: -.5px;
+  }
+  .hero .facts {
+    position: relative; z-index: 1;
+    display: flex; flex-wrap: wrap; gap: 8px; margin: 0;
+  }
+  .hero .facts span {
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.28);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .hero .facts span.accent { background: rgba(255,122,92,.9); border-color: rgba(255,255,255,.4); }
+
+  /* ---------- day chips ---------- */
+  .chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 0 0 16px;
+  }
+  .chips a {
+    flex: 1 1 auto;
+    text-decoration: none;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 13px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--deep);
+    box-shadow: 0 1px 2px rgba(18,58,99,.06);
+    white-space: nowrap;
+  }
+  .chips a b { color: var(--teal); font-weight: 800; }
+
+  /* ---------- cards ---------- */
+  .grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 14px; }
+  @media (min-width: 620px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+  .card {
+    background: var(--paper);
+    border-radius: 16px;
+    padding: 16px 18px 18px;
+    margin: 0 0 14px;
+    box-shadow: 0 2px 10px rgba(18,58,99,.08);
+    border: 1px solid rgba(230,235,241,.9);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .grid .card { margin: 0; }
+  .card h2 {
+    font-size: 18px; margin: 0 0 3px; font-weight: 800; letter-spacing: -.2px;
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .card h2 .ico { font-size: 17px; }
+  .card .where {
+    color: var(--teal); font-size: 14px; margin: 0 0 12px; font-weight: 700;
+  }
+  .small { font-size: 13.5px; color: var(--muted); }
+  .card p.small { margin: 10px 0 0; }
+
+  /* day accent bars */
+  .day { position: relative; padding-left: 20px; scroll-margin-top: 12px; }
+  .day::before {
+    content: ""; position: absolute; left: 0; top: 12px; bottom: 12px;
+    width: 5px; border-radius: 4px;
+  }
+  .d1::before { background: #0e9aa7; }
+  .d2::before { background: #4a6fd6; }
+  .d3::before { background: #0f7f8c; }
+  .d4::before { background: #ff7a5c; }
+  .d5::before { background: #7a5cd6; }
+
+  /* ---------- simple two-column rows (flights / hotels) ---------- */
+  .rows { display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; }
+  .rows .lab {
+    font-weight: 800; font-size: 13px; color: var(--deep);
+    background: #eaf2f8; border-radius: 6px; padding: 2px 8px;
+    height: fit-content; white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .rows .val { font-size: 15px; }
+  .rows .val + .lab { border-top: 0; }
+
+  /* ---------- timeline ---------- */
+  .tl { position: relative; margin: 4px 0 0; padding: 0; list-style: none; }
+  .tl::before {
+    content: ""; position: absolute;
+    left: 60px; top: 10px; bottom: 12px;
+    width: 2px; background: var(--line);
+  }
+  .tl li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 0 22px;
+    padding: 7px 0;
+    font-size: 15.5px;
+  }
+  .tl .time {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--deep);
+    text-align: right;
+    padding-top: 1px;
+    white-space: nowrap;
+  }
+  .tl li::before {
+    content: "";
+    position: absolute;
+    left: 56px; top: 12px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2.5px solid var(--teal);
+    z-index: 1;
+  }
+  .d2 .tl li::before { border-color: #4a6fd6; }
+  .d3 .tl li::before { border-color: #0f7f8c; }
+  .d4 .tl li::before { border-color: #ff7a5c; }
+  .d5 .tl li::before { border-color: #7a5cd6; }
+
+  /* ---------- callouts ---------- */
+  .note {
+    display: grid; grid-template-columns: 22px 1fr; gap: 10px;
+    background: #fff8e1;
+    border: 1px solid #f5e0a3;
+    border-left: 5px solid #f5b400;
+    padding: 11px 14px;
+    border-radius: 10px;
+    margin-top: 14px;
+    font-size: 14.5px;
+  }
+  .note .ico { font-size: 16px; line-height: 1.35; }
+  .key { background: #e8f1fb; border-color: #bcd6f0; border-left-color: #0a66c2; }
+
+  /* ---------- checklist ---------- */
+  .check { list-style: none; margin: 6px 0 0; padding: 0; }
+  .check li {
+    position: relative;
+    padding: 9px 0 9px 34px;
+    font-size: 15.5px;
+    border-top: 1px solid var(--line);
+    cursor: pointer;
+  }
+  .check li:first-child { border-top: 0; }
+  .check li::before {
+    content: "";
+    position: absolute; left: 2px; top: 11px;
+    width: 19px; height: 19px;
+    border: 2px solid #b9c6d3;
+    border-radius: 6px;
+    background: #fff;
+  }
+  .check li.done::before {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+  .check li.done::after {
+    content: "";
+    position: absolute;
+    left: 8px; top: 14px;
+    width: 5px; height: 10px;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+  }
+  .check li.done { color: var(--muted); }
+
+  .foot {
+    font-size: 13px; color: var(--muted);
+    text-align: center;
+    margin: 18px 4px 0;
+    line-height: 1.5;
+  }
+
+  /* ---------- print ---------- */
+  @media print {
+    body { background: #fff; padding: 0; font-size: 12.5pt; }
+    .wrap { max-width: 100%; }
+    .card, .hero { box-shadow: none; }
+    .hero {
+      background: #123a63 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      border-radius: 12px;
+    }
+    .hero::after { display: none; }
+    .card { border: 1px solid #d8e0e8; border-radius: 10px; }
+    .chips a { box-shadow: none; }
+    .note, .key, .rows .lab, .check li::before, .day::before, .tl li::before {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">Family trip · 11 people</p>
+  <h1>Macau + Chimelong trip</h1>
+  <p class="facts">
+    <span>📅 Wed 9 – Sun 13 Sep 2026</span>
+    <span class="accent">👨‍👩‍👧‍👦 11 people</span>
+    <span>✈️ Air Macau, Business</span>
+    <span>v2 (8 Sep evening)</span>
+  </p>
+</header>
+
+<nav class="chips">
+  <a href="#day1"><b>Day 1</b> Wed 9 · BKK→Macau→Hengqin</a>
+  <a href="#day2"><b>Day 2</b> Thu 10 · Spaceship park</a>
+  <a href="#day3"><b>Day 3</b> Fri 11 · Ocean Kingdom</a>
+  <a href="#day4"><b>Day 4</b> Sat 12 · Move to Macau</a>
+  <a href="#day5"><b>Day 5</b> Sun 13 · Fly home</a>
+</nav>
+
+<div class="grid">
+
+  <div class="card">
+    <h2><span class="ico">✈️</span> Flights</h2>
+    <div class="rows">
+      <div class="lab">Go</div>
+      <div class="val"><b>Wed 9 Sep · NX995</b><br>Bangkok (Suvarnabhumi) 10:35 → Macau 14:20</div>
+      <div class="lab">Back</div>
+      <div class="val"><b>Sun 13 Sep · NX992</b><br>Macau 18:55 → Bangkok 21:10</div>
+    </div>
+    <p class="small">Bags: 1 carry-on 7 kg + 2 checked bags 32 kg each, per person. Meal on board both ways.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="ico">🏨</span> Hotels</h2>
+    <div class="rows">
+      <div class="lab">9–12</div>
+      <div class="val"><b>Chimelong Spaceship Hotel</b>, Hengqin (Zhuhai, China)<br><span class="small">4 rooms, 3 nights · check-in from 15:00 · check-out by 11:00 Sat<br>Rooms under: Pawin · Thanatvarin (Bank) + Virunyupa · Tipvipa · Thitikarn<br>Address for taxis: No. 1 Fuxiang Bay, Hengqin New Area, Zhuhai (珠海长隆飞船酒店)</span></div>
+      <div class="lab">12–13</div>
+      <div class="val"><b>Studio City Hotel</b>, Cotai, Macau<br><span class="small">2 rooms, 1 night · check-in from 15:00 · check-out 12:00 Sun (ask for late check-out)<br>Rooms under: Tipvipa · Virunyupa</span></div>
+    </div>
+    <div class="note"><span class="ico">🍽️</span><div><b>Breakfast at Chimelong is booked</b> (Sailor Buffet, 10–12 Sep). Each room's lead guest got breakfast order numbers / a daily code from the hotel — show them at the buffet cashier, no need to ask the front desk. Bank has copies.</div></div>
+  </div>
+
+</div>
+
+<div class="card day d1" id="day1">
+  <h2><span class="ico">✈️</span> Day 1 · Wed 9 Sep</h2>
+  <p class="where">Bangkok → Macau → Hengqin</p>
+  <ul class="tl">
+    <li><span class="time">07:30</span><span>Meet at Suvarnabhumi, <b>Level 4, Air Macau counters</b>. Check in, drop bags, lounge breakfast.</span></li>
+    <li><span class="time">10:35</span><span>NX995 departs. Lunch on board.</span></li>
+    <li><span class="time">14:20</span><span>Land Macau. Immigration + bags (~30–45 min). You get a printed stay slip, no stamp — keep it.</span></li>
+    <li><span class="time">15:15</span><span>Taxis to <b>Hengqin Port</b> (15–25 min). Macau taxis cannot cross — get out, walk through the one-stop border hall (20–40 min). <b>Passports in your hand, not in a bag.</b></span></li>
+    <li><span class="time">16:15</span><span>Free driverless shuttle or DiDi to <b>Chimelong Spaceship Hotel</b> (10–15 min). Check in.</span></li>
+    <li><span class="time">17:00</span><span>Unpack, shower, rest.</span></li>
+    <li><span class="time">18:30</span><span>Dinner at the hotel (Sailor Buffet or the food court). No park tonight.</span></li>
+  </ul>
+  <div class="note key"><span class="ico">🛂</span><div><b>Before the border:</b> everyone fills in the China online Arrival Card (app "NIA 12367", or the WeChat / Alipay mini-program). Required for all foreigners since Nov 2025. Do it on the plane or at Macau airport.</div></div>
+</div>
+
+<div class="card day d2" id="day2">
+  <h2><span class="ico">🎢</span> Day 2 · Thu 10 Sep</h2>
+  <p class="where">Chimelong Spaceship — indoor park, attached to the hotel</p>
+  <ul class="tl">
+    <li><span class="time">08:00</span><span>Breakfast, Sailor Buffet (hotel) — booked, show your room's order number at the cashier.</span></li>
+    <li><span class="time">09:30</span><span>Park entry. Foreign passports use the manual ticket window + staffed lane (15–20 min). Hotel guests may get early entry — ask at the desk.</span></li>
+    <li><span class="time">10:00</span><span>Space Exploration, Cosmic World, the big aquarium tunnels. Rides for the kids, shows for everyone.</span></li>
+    <li><span class="time">12:30</span><span>Lunch at the park food court.</span></li>
+    <li><span class="time">13:30</span><span>Back to the room to rest — the hotel is inside the park complex.</span></li>
+    <li><span class="time">16:00</span><span>Back in for the zones you missed. <b>Park closes 18:00.</b></span></li>
+    <li><span class="time">18:30</span><span>Dinner: hotel, or Cantonese in Hengqin (Novotown / Hengqin Avenue, 10–15 min taxi).</span></li>
+  </ul>
+</div>
+
+<div class="card day d3" id="day3">
+  <h2><span class="ico">🐋</span> Day 3 · Fri 11 Sep</h2>
+  <p class="where">Chimelong Ocean Kingdom — outdoor park, fireworks at night</p>
+  <ul class="tl">
+    <li><span class="time">08:00</span><span>Breakfast, Sailor Buffet (booked — order number at the cashier).</span></li>
+    <li><span class="time">09:15</span><span>Hotel shuttle to Ocean Kingdom (10–15 min). Tickets at the manual window with passports.</span></li>
+    <li><span class="time">10:00</span><span>Indoor tanks first while it's cool: whale sharks, belugas, polar house, penguins. One seated show (dolphin or beluga — check times at the gate).</span></li>
+    <li><span class="time">13:00</span><span>Lunch in the park.</span></li>
+    <li><span class="time">14:00</span><span>Shuttle back to the hotel. Shower, rest.</span></li>
+    <li><span class="time">16:30</span><span>Back in: parade, the gentler exhibits, dinner in the park.</span></li>
+    <li><span class="time">19:30</span><span>Find seats by the central lake for the <b>fireworks + drone show at 20:00</b> (closing time; cancelled in thunderstorms).</span></li>
+    <li><span class="time">20:30</span><span>Shuttle back. <b>Pack tonight</b> — check-out is 11:00 tomorrow.</span></li>
+  </ul>
+  <div class="note"><span class="ico">🌧️</span><div>Hats, sunscreen, water — UV is very high this week. Rain jacket in the bag.</div></div>
+</div>
+
+<div class="card day d4" id="day4">
+  <h2><span class="ico">🎡</span> Day 4 · Sat 12 Sep</h2>
+  <p class="where">Hengqin → Macau (Studio City)</p>
+  <ul class="tl">
+    <li><span class="time">08:00</span><span>Breakfast, Sailor Buffet (booked — order number at the cashier). Bags ready by 10:15.</span></li>
+    <li><span class="time">10:30</span><span>Check out (by 11:00). Shuttle / DiDi to Hengqin Port. Border hall 20–40 min.</span></li>
+    <li><span class="time">11:30</span><span>Macau side: LRT Hengqin line → <b>Lotus station</b> (2 min) — it's next to Studio City. Or taxi. Leave bags with the concierge if the room isn't ready.</span></li>
+    <li><span class="time">12:30</span><span>Lunch in Studio City (Tim Ho Wan / Bi Ying).</span></li>
+    <li><span class="time">14:00</span><span>Rest once the rooms are ready.</span></li>
+    <li><span class="time">16:00</span><span><b>Golden Reel</b> ferris wheel (open 14:00–20:00, MOP 100) · <b>Studio City Stardust</b> 4D flying theatre · Water Park (12:00–20:00) if anyone wants it.</span></li>
+    <li><span class="time">18:00</span><span>Dinner: <b>Taipa Village</b> (10 min taxi) — António for Portuguese, or the Rua do Cunha cafés. Alternative: <b>House of Dancing Water</b> at City of Dreams next door (book first, +853 8868 6688).</span></li>
+  </ul>
+  <div class="note"><span class="ico">💴</span><div>Money changes here: China = CNY / Alipay / WeChat. Macau = MOP (HKD accepted). Neither works across the border.</div></div>
+</div>
+
+<div class="card day d5" id="day5">
+  <h2><span class="ico">✈️</span> Day 5 · Sun 13 Sep</h2>
+  <p class="where">Macau → Bangkok</p>
+  <ul class="tl">
+    <li><span class="time">08:30</span><span>Breakfast at Studio City.</span></li>
+    <li><span class="time">09:30</span><span>One easy outing: Taipa Village, pork-chop bun at Tai Lei Loi Kei — or stay in the mall if it rains (showers and thunder forecast).</span></li>
+    <li><span class="time">12:00</span><span>Lunch at Studio City or City of Dreams. Check out (ask for late check-out on arrival).</span></li>
+    <li><span class="time">15:00</span><span>Taxis to Macau airport (10 min). Inside by <b>16:00</b> — leave early, it's the wet day.</span></li>
+    <li><span class="time">16:00</span><span>Air Macau check-in (counters close 60 min before). Lounge; dinner is on board.</span></li>
+    <li><span class="time">18:55</span><span>NX992 departs.</span></li>
+    <li><span class="time">21:10</span><span>Land Bangkok. Home ~22:30.</span></li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2><span class="ico">🧳</span> Before you leave Bangkok</h2>
+  <ul class="check" id="checklist">
+    <li>Passport valid 6+ months. No visa needed for Thai passports (China 30 days, Macau 30 days).</li>
+    <li>Fill in the <b>China online Arrival Card</b> (NIA 12367 app or WeChat/Alipay mini-program).</li>
+    <li>Set up <b>Alipay or WeChat Pay</b> with your Thai card — it takes a day to verify.</li>
+    <li>Cash: CNY 1,000–2,000 for China; some MOP or HKD for Macau.</li>
+    <li>Turn on a <b>VPN</b> before you fly — LINE, Google, WhatsApp are blocked in Hengqin (Macau is fine). Or buy a roaming eSIM that covers China.</li>
+    <li>Rain jacket, hat, sunscreen, comfortable shoes.</li>
+  </ul>
+</div>
+
+<p class="foot">Times are a plan, not a schedule — park hours and show times can change; check at the gate each morning.</p>
+
+</div>
+<script>
+  (function () {
+    var list = document.getElementById('checklist');
+    if (!list) return;
+    var KEY = 'trip-check-2026-09';
+    var items = list.children;
+
+    function load() {
+      try {
+        var raw = localStorage.getItem(KEY);
+        if (!raw) return;
+        var idx = JSON.parse(raw);
+        if (!idx || typeof idx.length !== 'number') return;
+        for (var i = 0; i < idx.length; i++) {
+          var li = items[idx[i]];
+          if (li) li.classList.add('done');
+        }
+      } catch (err) { /* storage blocked or bad data — ignore */ }
+    }
+
+    function save() {
+      try {
+        var idx = [];
+        for (var i = 0; i < items.length; i++) {
+          if (items[i].classList.contains('done')) idx.push(i);
+        }
+        localStorage.setItem(KEY, JSON.stringify(idx));
+      } catch (err) { /* ignore */ }
+    }
+
+    load();
+    list.addEventListener('click', function (e) {
+      var li = e.target.closest ? e.target.closest('li') : null;
+      if (li && li.parentNode === list) {
+        li.classList.toggle('done');
+        save();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
