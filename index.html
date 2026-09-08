@@ -228,6 +228,55 @@
   }
   .check li.done { color: var(--muted); }
 
+  /* ---------- bookings / numbers ---------- */
+  code, .num {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: #eaf2f8;
+    border: 1px solid #cfe0ee;
+    border-radius: 6px;
+    padding: 1px 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b3b63;
+    white-space: nowrap;
+    -webkit-user-select: all;
+    user-select: all;
+  }
+  .bk { width: 100%; border-collapse: collapse; margin: 10px 0 0; font-size: 13.5px; }
+  .bk th, .bk td { text-align: left; padding: 6px 5px; border-top: 1px solid var(--line); vertical-align: top; }
+  .bk th {
+    font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--muted); border-top: 0; font-weight: 800;
+  }
+  .bk td.seat {
+    font-variant-numeric: tabular-nums; font-weight: 800;
+    color: var(--deep); white-space: nowrap;
+  }
+  .blk {
+    border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; margin: 12px 0 0; background: #fbfdff;
+    page-break-inside: avoid; break-inside: avoid;
+  }
+  .blk h3 { font-size: 15px; margin: 0 0 4px; font-weight: 800; letter-spacing: -.1px; }
+  .blk p { margin: 6px 0 0; font-size: 14.5px; }
+  .pend { color: #b8452a; font-weight: 700; }
+  details.vault {
+    margin: 12px 0 0;
+    border: 1px solid #f5e0a3;
+    border-left: 5px solid #f5b400;
+    background: #fff8e1;
+    border-radius: 10px;
+    padding: 10px 14px;
+    page-break-inside: avoid; break-inside: avoid;
+  }
+  details.vault > summary {
+    font-weight: 800; font-size: 15px; cursor: pointer; color: var(--deep);
+  }
+  details.vault[open] > summary { margin-bottom: 6px; }
+  ul.plain { margin: 8px 0 0; padding-left: 20px; }
+  ul.plain li { margin: 7px 0; font-size: 15px; }
+  .alert { border-left: 5px solid var(--coral); }
+
   .foot {
     font-size: 13px; color: var(--muted);
     text-align: center;
@@ -249,7 +298,7 @@
     .hero::after { display: none; }
     .card { border: 1px solid #d8e0e8; border-radius: 10px; }
     .chips a { box-shadow: none; }
-    .note, .key, .rows .lab, .check li::before, .day::before, .tl li::before {
+    .note, .key, .rows .lab, .check li::before, .day::before, .tl li::before, code, .num, .blk {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -267,9 +316,31 @@
     <span>📅 Wed 9 – Sun 13 Sep 2026</span>
     <span class="accent">👨‍👩‍👧‍👦 11 people</span>
     <span>✈️ Air Macau, Business</span>
-    <span>v7 (9 Sep morning)</span>
+    <span>v8 (9 Sep, full bookings)</span>
   </p>
 </header>
+
+<div class="card alert" id="without-bank">
+  <h2><span class="ico">⚠️</span> If Bank can't come — read this first</h2>
+  <p class="where">The trip still runs. Nothing else is cancelled.</p>
+  <ul class="plain">
+    <li><b>His flight seats are 23A (out) and 26A (back).</b> A no-show cancels <i>only his seat</i> — tickets are per passenger, so everyone else flies exactly as booked.</li>
+    <li><b>Chimelong room <code>1688900538115181</code></b> is booked for Bank + Virunyupa. <b>Virunyupa checks in</b> with her passport — she is the registered second guest.</li>
+    <li><b>Both airport cars are in his name.</b> Claim them with the booking number + PIN: Car 1 <code>1688901649005406</code> / PIN <code>4888</code>, Car 2 <code>1688901649006870</code> / PIN <code>1736</code>. Say the booking name is <b>Thanatvarin Kittikasemsak</b>.</li>
+    <li><b>Any change or cancellation:</b> call <b>Trip.com Thailand 02-700-8666</b> (24/7) with the booking number + PIN. The account holder is Bank, but the numbers are what they ask for.</li>
+    <li>The Trip.com driver chat only works inside Bank's app — <b>phone the driver directly</b> instead.</li>
+    <li><b>Chimelong needs one named guest's real ID per room</b> at check-in, and the name must match the booking — room <code>1688900538115181</code> has <b>Virunyupa</b>, Studio City <code>1688900756190402</code> has <b>Virunyupa</b>. Park tickets are linked to that ID/face at first entry.</li>
+    <li><b>All hotel bookings are now non-refundable</b> (free cancellation ended 17:00 on 8 Sep) and a no-show is charged — so use the rooms. Bank's flight ticket simply goes unused.</li>
+    <li>Every booking number, PIN and code is in <a href="#bookings"><b>“Bookings — every number”</b></a> at the bottom of this page.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2><span class="ico">❗</span> Three things to sort out on arrival</h2>
+  <div class="note"><span class="ico">1️⃣</span><div><b>Tipvipa's Chimelong room <code>1688900538115176</code> is ROOM ONLY</b> — no buffet dinner, no Chimelong Show, <b>no park tickets</b> in that booking (breakfast for 1 on 10–12 Sep is included). And the two children, <b>Darika (3) and Phoomraphee (5), are not named on any package</b> — free entry is only for under 3 <i>or</i> under 1.0 m. Their park / show tickets have to be bought at the hotel desk or the park gate. Ask at check-in on day 1, not on day 2.</div></div>
+  <div class="note"><span class="ico">2️⃣</span><div><b>The dinner and the show are check-in day only — Wed 9 Sep.</b> Buffet dinner for 2 per room 17:30–21:30 (show the room card), Chimelong Show 17:00–18:25 at Chimelong Theater Hengqin, 2 seats per room, no assigned seats. If you skip them that evening they are gone. The <b>park pass is 4 days unlimited</b> from check-in, linked to ID/face at first entry, one use per room. <b>Check-out is 11:00</b> on Sat 12 Sep.</div></div>
+  <div class="note"><span class="ico">3️⃣</span><div><b>Two 6-seater cars for 11 people — split the group 5 + 6</b> before you walk out of arrivals. Both cars are booked in Bank's name; the drivers meet the group at arrivals and the plate is on the booking page. The booking form says "1 adult, 1 child" — ignore it, each car legally seats 6 adults with about 4 big bags.</div></div>
+</div>
 
 <nav class="chips">
   <a href="#day1"><b>Day 1</b> Wed 9 · BKK→Macau→Hengqin</a>
@@ -277,6 +348,7 @@
   <a href="#day3"><b>Day 3</b> Fri 11 · Ocean Kingdom</a>
   <a href="#day4"><b>Day 4</b> Sat 12 · Move to Macau</a>
   <a href="#day5"><b>Day 5</b> Sun 13 · Fly home</a>
+  <a href="#bookings"><b>🧾 Bookings</b> every number</a>
 </nav>
 
 <div class="grid">
@@ -289,7 +361,7 @@
       <div class="lab">Back</div>
       <div class="val"><b>Sun 13 Sep · NX992</b><br>Macau 18:55 → Bangkok 21:10</div>
     </div>
-    <p class="small">Bags: 1 carry-on 7 kg + 2 checked bags 32 kg each, per person. Meal on board both ways.</p>
+    <p class="small">Bags: 1 carry-on 7 kg + 1 personal item (56×36×23 cm) each. Checked: <b>2 × 32 kg</b> for Chanapan &amp; Vilasinee (Business), <b>1 × 32 kg</b> for everyone else. Meal on board both ways (A321neo). <b>Be at the airport 3 hours before:</b> Suvarnabhumi by <b>07:35</b> on 9 Sep, Macau airport by <b>15:55</b> on 13 Sep. Names must match the passport exactly. Tickets must be used in order — skipping the outbound cancels the return.</p>
     <p class="small"><b>Airport pick-up is booked</b> (Trip.com): two Premium 6-seater cars meet us at Macau arrivals at 14:50 and drive straight to the Chimelong Spaceship Hotel. Each car takes up to 6 people and about 4 big bags — pack big suitcases lightly or share. <b>Car 1 driver:</b> Chen Boxin, +86 191 6888 0078 (speaks Cantonese, English, Mandarin) — black Toyota Alphard, plate <b>AC19-81</b>. Car 2 driver: not assigned yet (Trip.com sends it by 12:50). Provider WanXingZhiTong hotline +86 189 9841 1262.</p>
   </div>
 
@@ -297,11 +369,11 @@
     <h2><span class="ico">🏨</span> Hotels</h2>
     <div class="rows">
       <div class="lab">9–12</div>
-      <div class="val"><b>Chimelong Spaceship Hotel</b>, Hengqin (Zhuhai, China)<br><span class="small">5 rooms, 3 nights · check-in from 15:00 · check-out by 11:00 Sat<br>Rooms: Pawin ×2 (Space Suite) · Thanatvarin (Bank) + Virunyupa (Moon Twin) · Tipvipa (Moon King) · Thitikarn (Planet Twin)<br><b>Park tickets are in the package</b>: unlimited Spaceship Park + Ocean Kingdom + the Chimelong Show (Wed 9 Sep, 17:00). Nothing to buy at the gate.<br>Address for taxis: No. 1 Fuxiang Bay, Hengqin New Area, Zhuhai (珠海长隆飞船酒店)</span></div>
+      <div class="val"><b>Chimelong Spaceship Hotel</b>, Hengqin (Zhuhai, China)<br><span class="small">5 rooms, 3 nights · check-in from 15:00 · check-out by 11:00 Sat<br>Rooms: <b>Space Suite ×2</b> — Pawin, Thanapornpan, Vilasinee, Chanapan · <b>Moon twin</b> — Thanatvarin (Bank) + Virunyupa · <b>Planet twin</b> — Thitikarn, Chutiphon, Phoomraphee · <b>Moon king</b> — Tipvipa (room + breakfast only)<br><b>Park tickets are in the package</b>: unlimited Spaceship Park + Ocean Kingdom + the Chimelong Show (Wed 9 Sep, 17:00). Nothing to buy at the gate.<br>Address for taxis: No. 1 Fuxiang Bay, Hengqin New Area, Zhuhai (珠海长隆飞船酒店)</span></div>
       <div class="lab">12–13</div>
       <div class="val"><b>Studio City Hotel</b>, Cotai, Macau<br><span class="small">5 rooms, 1 night · check-in from 15:00 · <b>check-out by 11:00 Sun</b> (late check-out only if the desk says yes)<br>Rooms: 4 × Celebrity Vista King under Tipvipa (Tipvipa · Thitikarn · Chutiphon · Pawin · Thanapornpan · Chanapan · Vilasinee) · 1 × Twin under Thanatvarin (Bank) + Virunyupa</span></div>
     </div>
-    <div class="note"><span class="ico">🍽️</span><div><b>Meals at Chimelong:</b> breakfast is booked at the Sailor Buffet (07:00–10:30, 10–12 Sep) — each room's lead guest has breakfast order numbers from the hotel, show them at the cashier; Bank has copies. The package also includes one <b>buffet dinner for 2 per room</b> at Sailor Buffet (17:30–21:30, room card) — confirm at the desk which night it covers. <b>Studio City: no meals included</b> — breakfast there is pay-at-the-hotel (~07:00–10:30) or the Cotai food courts.</div></div>
+    <div class="note"><span class="ico">🍽️</span><div><b>Meals at Chimelong:</b> breakfast is booked at the Sailor Buffet (07:00–10:30, 10–12 Sep) — show the room's breakfast order number at the cashier — <b>all the codes are in <a href="#bookings">Bookings</a> below</b>. The package also includes one <b>buffet dinner for 2 per room</b> at Sailor Buffet (<b>Wed 9 Sep only</b>, 17:30–21:30, room card) — except Tipvipa's room <code>1688900538115176</code>, which is room + breakfast only. <b>Studio City: no meals included</b> — breakfast there is pay-at-the-hotel (~07:00–10:30) or the Cotai food courts.</div></div>
   </div>
 
 </div>
@@ -313,7 +385,7 @@
     <li><span class="time">07:00</span><span><b>Leave home together</b> — everyone in the same cars. Be at Suvarnabhumi <b>Level 4, Air Macau counters</b> by 08:00. Check in, drop bags, lounge breakfast.</span></li>
     <li><span class="time">10:35</span><span>NX995 departs. Lunch on board.</span></li>
     <li><span class="time">14:20</span><span>Land Macau. Immigration + bags (~30–45 min). You get a printed stay slip, no stamp — keep it.</span></li>
-    <li><span class="time">14:50</span><span><b>Pick-up at arrivals</b> — two booked cars (Premium 6-seaters, provider WanXingZhiTong). The driver tracks NX995 and waits; Car 1: Chen Boxin, +86 191 6888 0078, black Alphard AC19-81. Car 2 driver to follow. Bank has the pick-up PINs. No taxis to find.</span></li>
+    <li><span class="time">14:50</span><span><b>Pick-up at arrivals</b> — two booked cars (Premium 6-seaters, provider WanXingZhiTong). The driver tracks NX995 and waits. <b>Car 1</b> (<b>PIN <code>4888</code></b>): Chen Boxin, +86 191 6888 0078, black Alphard AC19-81. <b>Car 2</b> (<b>PIN <code>1736</code></b>): driver assigned by 12:50 today. Show the booking number + PIN to the driver — all four numbers are in <a href="#bookings">Bookings</a> below. No taxis to find.</span></li>
     <li><span class="time">15:30</span><span>Cars drive to <b>Hengqin Port</b> (15–25 min). Everyone still gets out with passports for the border check (20–40 min) — the cars take us through to the China side. <b>Passports in your hand, not in a bag.</b></span></li>
     <li><span class="time">16:15</span><span>Arrive at <b>Chimelong Spaceship Hotel</b>. Check in.</span></li>
     <li><span class="time">16:45</span><span>Bags to the rooms, then straight out: the <b>Chimelong Show</b> tickets in the package are valid <b>today only</b> (check-in day). The desk links them to your ID at check-in — ask for them before you leave the counter.</span></li>
@@ -327,7 +399,7 @@
   <h2><span class="ico">🎢</span> Day 2 · Thu 10 Sep</h2>
   <p class="where">Chimelong Spaceship — indoor park, attached to the hotel</p>
   <ul class="tl">
-    <li><span class="time">08:00</span><span>Breakfast, Sailor Buffet (hotel) — booked, show your room's order number at the cashier. Buffet runs 07:00–10:30.</span></li>
+    <li><span class="time">08:00</span><span>Breakfast, Sailor Buffet (hotel) — booked, show your room's order number at the cashier (<b>codes in the Bookings section below</b>). Buffet runs 07:00–10:30.</span></li>
     <li><span class="time">09:30</span><span>Park entry — <b>tickets are in the hotel package</b>, nothing to buy. Foreign passports go through the staffed lane (15–20 min). Hotel guests may get early entry — ask at the desk.</span></li>
     <li><span class="time">10:00</span><span>Space Exploration, Cosmic World, the big aquarium tunnels. Rides for the kids, shows for everyone. Check the board at the gate for the <b>orca show</b> times (usually two a day, around 12:00 and 16:00) and build the day around one.</span></li>
     <li><span class="time">12:30</span><span>Lunch at the park food court.</span></li>
@@ -341,7 +413,7 @@
   <h2><span class="ico">🐋</span> Day 3 · Fri 11 Sep</h2>
   <p class="where">Chimelong Ocean Kingdom — outdoor park, fireworks at night</p>
   <ul class="tl">
-    <li><span class="time">08:00</span><span>Breakfast, Sailor Buffet (booked — order number at the cashier). Buffet runs 07:00–10:30.</span></li>
+    <li><span class="time">08:00</span><span>Breakfast, Sailor Buffet (booked — order number at the cashier; <b>codes in the Bookings section below</b>). Buffet runs 07:00–10:30.</span></li>
     <li><span class="time">09:15</span><span>Hotel shuttle to Ocean Kingdom (10–15 min). Entry is in the package — passports at the staffed lane.</span></li>
     <li><span class="time">10:00</span><span>Indoor tanks first while it's cool: whale sharks, belugas, polar house, penguins. One seated show (dolphin or beluga — check times at the gate).</span></li>
     <li><span class="time">13:00</span><span>Lunch in the park.</span></li>
@@ -357,7 +429,7 @@
   <h2><span class="ico">🎡</span> Day 4 · Sat 12 Sep</h2>
   <p class="where">Hengqin → Macau (Studio City)</p>
   <ul class="tl">
-    <li><span class="time">08:00</span><span>Breakfast, Sailor Buffet (booked — order number at the cashier). Buffet runs 07:00–10:30. Bags ready by 10:15.</span></li>
+    <li><span class="time">08:00</span><span>Breakfast, Sailor Buffet (booked — order number at the cashier; <b>codes in the Bookings section below</b>). Buffet runs 07:00–10:30. Bags ready by 10:15.</span></li>
     <li><span class="time">10:30</span><span>Check out (by 11:00). Shuttle / DiDi to Hengqin Port. Border hall 20–40 min.</span></li>
     <li><span class="time">11:30</span><span>Macau side: LRT Hengqin line → <b>Lotus station</b> (2 min) — it's next to Studio City. Or taxi. Leave bags with the concierge if the room isn't ready.</span></li>
     <li><span class="time">12:30</span><span>Lunch in Studio City (Tim Ho Wan / Bi Ying).</span></li>
@@ -382,6 +454,113 @@
     <li><span class="time">18:55</span><span>NX992 departs.</span></li>
     <li><span class="time">21:10</span><span>Land Bangkok. Home ~22:30.</span></li>
   </ul>
+</div>
+
+<div class="card" id="bookings">
+  <h2><span class="ico">🧾</span> Bookings — every number</h2>
+  <p class="where">Everything you need to run this trip without Bank</p>
+  <p class="small">Booking numbers are the Trip.com references — quote one plus its PIN and any agent can find the booking. PINs, PNRs and e-ticket numbers sit in the yellow boxes; tap a title to open or close it.</p>
+
+  <div class="blk">
+    <h3>✈️ Flights — Air Macau</h3>
+    <p><b>Out · NX995 · Wed 9 Sep</b> — Suvarnabhumi (BKK) 10:35 → Macau 14:20. Be at the airport by <b>07:35</b>.<br>
+       <b>Back · NX992 · Sun 13 Sep</b> — Macau 18:55 → Suvarnabhumi 21:10. Be at the airport by <b>15:55</b>.</p>
+    <table class="bk">
+      <tr><th>Trip.com booking</th><th>Passenger</th><th>Out</th><th>Back</th></tr>
+      <tr><td><code>1688901252924984</code></td><td>CHANAPAN Kittikasemsak</td><td class="seat">2A</td><td class="seat">1D</td></tr>
+      <tr><td><code>1688901252924984</code></td><td>VILASINEE Kittikasemsak</td><td class="seat">2C</td><td class="seat">1F</td></tr>
+      <tr><td><code>1688901253365816</code></td><td>THANATVARIN Kittikasemsak (Bank)</td><td class="seat">23A</td><td class="seat">26A</td></tr>
+      <tr><td><code>1688901253365816</code></td><td>VIRUNYUPA Kittikasemsak</td><td class="seat">23B</td><td class="seat">26B</td></tr>
+      <tr><td><code>1688901253365816</code></td><td>THANAPORNPAN Kittikasemsak</td><td class="seat">22A</td><td class="seat">25A</td></tr>
+      <tr><td><code>1688901253365816</code></td><td>PAWIN Lowattanasiri</td><td class="seat">22B</td><td class="seat">25B</td></tr>
+      <tr><td><code>1688901253365816</code></td><td>CHUTIPHON Kittikasemsak</td><td class="seat">22C</td><td class="seat">25C</td></tr>
+      <tr><td><code>1688901253365816</code></td><td>THITIKARN Asavavongsatien</td><td class="seat">22D</td><td class="seat">25D</td></tr>
+      <tr><td><code>1688901253365816</code></td><td>DARIKA Kittikasemsak (3)</td><td class="seat">22E</td><td class="seat">25E</td></tr>
+      <tr><td><code>1688901253365816</code></td><td>PHOOMRAPHEE Kittikasemsak (5)</td><td class="seat">22F</td><td class="seat">25F</td></tr>
+      <tr><td><code>1688901255033592</code></td><td>TIPVIPA Kittikasemsak</td><td class="seat">23C</td><td class="seat">26C</td></tr>
+    </table>
+    <p class="small">Chanapan &amp; Vilasinee fly <b>Business</b> (2 × 32 kg checked each); the other nine are Economy (1 × 32 kg each) — everyone gets 1 carry-on 7 kg + a personal item 56×36×23 cm. Booking <code>1688901253365816</code> is a <b>group booking: check-in and any change must be done for all 8 people together</b>. All three bookings sit under the Trip.com account "Kingstella Group". Check in online on the Air Macau site with the PNR, or at the Air Macau counters with passports.</p>
+    <details class="vault" open>
+      <summary>Booking numbers, PINs &amp; tickets — tap to open / close</summary>
+      <table class="bk">
+        <tr><th>Booking</th><th>PNR</th><th>E-ticket numbers</th></tr>
+        <tr><td><code>1688901252924984</code></td><td><code>NHZMG5</code></td><td><code>675-9475515122</code>, <code>675-9475515123</code></td></tr>
+        <tr><td><code>1688901253365816</code></td><td><code>MKT2M0</code></td><td><code>675-9445456676</code>, <code>675-9445456678</code>, <code>675-9445456671</code>, <code>675-9445456677</code>, <code>675-9445456675</code>, <code>675-9445456672</code>, <code>675-9445456673</code>, <code>675-9445456674</code></td></tr>
+        <tr><td><code>1688901255033592</code></td><td><code>PEMQ70</code></td><td><code>675-4827331374</code></td></tr>
+      </table>
+    </details>
+  </div>
+
+  <div class="blk">
+    <h3>🚐 Airport pick-up — Macau airport → Chimelong, Wed 9 Sep 14:50</h3>
+    <p>Two Premium 6-seaters, provider <b>WanXingZhiTong</b>, both tracking flight NX995, both booked in the name <b>Thanatvarin Kittikasemsak</b>. Each car takes 6 adults and about 4 big bags — <b>split the group 5 + 6</b>. Free cancellation until <b>10:50 on 9 Sep</b>.</p>
+    <p><b>Car 1</b> — booking <code>1688901649005406</code>, PIN <code>4888</code>.<br>
+       Driver <b>Chen Boxin</b>, <b>+86 191 6888 0078</b> (Cantonese / English / Mandarin) — black Toyota Alphard, plate <b>AC19-81</b>.</p>
+    <p><b>Car 2</b> — booking <code>1688901649006870</code>, PIN <code>1736</code>.<br>
+       <span class="pend">Driver assigned by 12:50 on 9 Sep</span> — check Bank's Trip.com booking page or call the provider hotline below for the name, phone and plate. If no driver appears at pick-up time, Trip.com refunds and compensates.</p>
+    <p><b>How to claim a car without Bank:</b> meet the driver at arrivals, show the <b>booking number + PIN</b> and say the booking name is <b>Thanatvarin Kittikasemsak</b>. The in-app driver chat only works in Bank's phone — call the driver's number instead.</p>
+    <p class="small">Provider hotline <b>+86 189 9841 1262</b> (email 18922191367@163.com). ฿4,305.88 per car, prepaid.</p>
+  </div>
+
+  <div class="blk">
+    <h3>🏨 Chimelong Spaceship Hotel — Wed 9 → Sat 12 Sep</h3>
+    <p>No. 1 Fuxiang Bay, Hengqin New Area, Xiangzhou District, Zhuhai, Guangdong<br>
+       <b>广东珠海香洲区横琴新区富祥湾1号 · 长隆飞船酒店</b> (show this to a taxi driver)<br>
+       Phone <b>+86 756 2998666 ext 1</b> · packages &amp; restaurant line <b>+86 756 2998666 ext 0</b></p>
+    <p><b>Check-in</b> from 15:00 on 9 Sep · <b>check-out before 11:00</b> on 12 Sep. One named guest's <b>real ID per room</b> at check-in, name must match the booking. All four bookings are now <b>non-refundable</b>; no-show is charged.</p>
+    <p><b>In the package</b> (bookings …5219, …5181, …2229 only): buffet dinner for 2 per room at Sailor's Buffet on <b>check-in day 9 Sep, 17:30–21:30</b> (show the room card) · 2 Chimelong Show tickets, <b>9 Sep 17:00–18:25</b>, Chimelong Theater Hengqin, first-come seating · 4-day unlimited Spaceship Park + Ocean Kingdom for 2 (early entry, linked to ID/face at first entry) · breakfast for 2 on 10, 11 and 12 Sep at Sailor's Buffet 07:00–10:30. Extra breakfast at the door: adult CNY 128, child 3–11 CNY 78, under 2 free.</p>
+
+    <p><b>Booking <code>1688900538115176</code> — TIPVIPA Kittikasemsak</b> · Moon Room, king · <b class="pend">room + breakfast for 1 only — no dinner, no show, no park tickets</b>.<br>
+      Breakfast / dining proof: at the restaurant entrance give the <b>phone number ending 8432</b> and the day's proof code — <b>10 Sep <code>2706849</code></b> · <b>11 Sep <code>0481763</code></b> · <b>12 Sep <code>7129608</code></b>.</p>
+
+    <p><b>Booking <code>1688900538115181</code> — THANATVARIN + VIRUNYUPA Kittikasemsak</b> · Moon Room, twin · full package.<br>
+      <b>Virunyupa checks in</b> if Bank is not there. Breakfast: show the order number at the Sailor's Buffet cashier, nothing to ask at the front desk — <b>10 Sep <code>1196938668</code></b> · <b>11 Sep <code>1196938675</code></b> · <b>12 Sep <code>1196938677</code></b> (2 people each).</p>
+
+    <p><b>Booking <code>1688900538115219</code> — PAWIN Lowattanasiri, THANAPORNPAN, VILASINEE, CHANAPAN</b> · Space Suite ×2 (king + single in each) · full package per room, breakfast for 2 per room on 10–12 Sep.</p>
+
+    <p><b>Booking <code>1688900538122229</code> — THITIKARN Asavavongsatien, CHUTIPHON, PHOOMRAPHEE</b> · Planet Room, twin (up to 4 guests) · full package, breakfast for 2 on 10–12 Sep.</p>
+
+    <p class="small">Fine print: each adult may bring one child under 3 <i>or</i> under 1.0 m free to the dinner and the parks; under-16s must be with an adult; extra bed CNY 200 per person per night in Moon / Planet rooms (Space Suites take cribs only). Park tickets cannot be transferred once linked to a face/ID.</p>
+
+    <details class="vault" open>
+      <summary>Booking numbers, PINs &amp; hotel confirmations — tap to open / close</summary>
+      <table class="bk">
+        <tr><th>Trip.com booking</th><th>PIN</th><th>Hotel confirmation no.</th></tr>
+        <tr><td><code>1688900538115176</code> Tipvipa</td><td><code>6058</code></td><td><code>1582004</code></td></tr>
+        <tr><td><code>1688900538115181</code> Thanatvarin + Virunyupa</td><td><code>7169</code></td><td><code>1582006</code></td></tr>
+        <tr><td><code>1688900538115219</code> Pawin +3 (2 rooms)</td><td><code>3414</code></td><td><code>1582013</code>, <code>1582012</code></td></tr>
+        <tr><td><code>1688900538122229</code> Thitikarn +2</td><td><code>7672</code></td><td><code>1582534</code></td></tr>
+      </table>
+    </details>
+  </div>
+
+  <div class="blk">
+    <h3>🎰 Studio City Hotel, Macau — Sat 12 → Sun 13 Sep</h3>
+    <p>Estrada do Istmo, Cotai, Macau (澳門路氹連貫公路) · Phone <b>+853 8865 8888</b><br>
+       <b>Two lobbies — these are "Celebrity" rooms, go to the Celebrity lobby.</b></p>
+    <p><b>Check-in</b> from 15:00 on 12 Sep · <b>check-out 11:00</b> on 13 Sep. A <b>deposit is taken at check-in</b> (card or cash — ask the desk). Non-refundable, no-show charged. <b>No meals included</b> — the breakfast buffet is 07:00–10:30, MOP 283.80 an adult, under 5 free. Selected minibar items are free once per room.</p>
+    <p><b>Booking <code>1688900756190404</code> — lead guest TIPVIPA Kittikasemsak</b> · <b>4 × Celebrity Vista King</b> (1 king bed each, cribs only) · also on the booking: Thitikarn, Chutiphon, Pawin, Thanapornpan, Chanapan, Vilasinee.</p>
+    <p><b>Booking <code>1688900756190402</code> — lead guest VIRUNYUPA Kittikasemsak</b> · <b>1 × Celebrity Vista Twin</b> (2 small doubles) · with Thanatvarin (Bank). <b>Virunyupa checks in.</b></p>
+    <p class="small">The two children are not named on either Studio City booking — the rooms take up to 4 guests and cribs are available; mention them at the desk.</p>
+    <details class="vault" open>
+      <summary>Booking numbers &amp; PINs — tap to open / close</summary>
+      <table class="bk">
+        <tr><th>Trip.com booking</th><th>PIN</th><th>Hotel confirmation no.</th></tr>
+        <tr><td><code>1688900756190404</code> Tipvipa · 4 King</td><td><code>2781</code></td><td><code>1688900756190404</code></td></tr>
+        <tr><td><code>1688900756190402</code> Virunyupa · 1 Twin</td><td><code>9015</code></td><td><code>1688900756190402</code></td></tr>
+      </table>
+    </details>
+  </div>
+
+  <div class="blk">
+    <h3>☎️ Help numbers</h3>
+    <p><b>Trip.com Thailand — 02-700-8666</b> (24/7, Thai). Have the booking number + PIN ready. This is the number for <i>any</i> change, cancellation or "the driver isn't here".<br>
+      <b>Chimelong Spaceship Hotel — +86 756 2998666 ext 1</b> (ext 0 for packages / restaurants).<br>
+      <b>Studio City Hotel, Macau — +853 8865 8888</b>.<br>
+      <b>Transfer provider (WanXingZhiTong) — +86 189 9841 1262</b>.<br>
+      <b>Car 1 driver Chen Boxin — +86 191 6888 0078</b> (Cantonese / English / Mandarin).</p>
+    <p class="small">In China, add +86 and dial from a roaming Thai number, or use WeChat call. Google / LINE / WhatsApp need a VPN in Hengqin; they work normally in Macau.</p>
+  </div>
 </div>
 
 <div class="card">
